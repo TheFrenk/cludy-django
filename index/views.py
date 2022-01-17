@@ -1,0 +1,10 @@
+import imp
+from django.http import HttpResponse
+from django.http import HttpResponse
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'index/index.html')
+
+def commands(request: HttpResponse):
+    return render(request, 'index/commands.html')

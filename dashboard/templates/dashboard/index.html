@@ -1,0 +1,39 @@
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'dashboard/css/dashboard.css' %}">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+        <div class="team_container">
+            <div class="text">Спиоск серверов</div>
+        </div>
+        <div class="row">
+			{% for guild in guilds %}
+			<div class="profile-card">
+				<div class="profile-content">
+					<div class="profile-image">
+						<img src="https://cdn.discordapp.com/icons/{{guild.id}}/{{guild.icon}}" alt="">
+					</div>
+					<div class="desc">
+						<h2>{{guild.name}}</h2>
+						<p>Owner</p>
+					</div>
+					<div class="btn-div">
+						<button class="btn">
+							{% if {{guild.id}} == {{gui}} %}
+							<a href="/dashboard/" class="">Ok</a>
+						</button>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+</html>
